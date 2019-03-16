@@ -102,7 +102,6 @@ resource "aws_internet_gateway" "igw" {
 
 }
 
-
 resource "aws_route_table" "rtb" {
     vpc_id = "${aws_vpc.vcs_vpc.id}"
     tags = {
