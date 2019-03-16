@@ -408,7 +408,7 @@ resource "aws_instance" "web1" {
      instance_type               = "t2.micro"
      subnet_id                   = "${aws_subnet.public_subnet.id}"
      vpc_security_group_ids      = ["${aws_security_group.web_sg.id}"]
-     key_name                    = "${aws_key_pair.dev_ssh_key.id}"
+     key_name                    = "${var.option_6_aws_ssh_key_name}"
      associate_public_ip_address = true
      tags {
           App          = "${var.option_3_aws_vpc_name}"
@@ -429,7 +429,7 @@ resource "aws_instance" "web2" {
      instance_type               = "t2.micro"
      subnet_id                   = "${aws_subnet.public_subnet.id}"
      vpc_security_group_ids      = ["${aws_security_group.web_sg.id}"]
-     key_name                    = "${aws_key_pair.dev_ssh_key.id}"
+     key_name                    = "${var.option_6_aws_ssh_key_name}"
      associate_public_ip_address = true
      tags {
           App           = "${var.option_3_aws_vpc_name}"
