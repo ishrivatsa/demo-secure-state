@@ -498,7 +498,7 @@ resource "aws_instance" "mgmt" {
      subnet_id                   = "${aws_subnet.public_subnet.id}"
      vpc_security_group_ids      = ["${aws_security_group.mgmt_sg.id}"]
      key_name                    = "${var.option_5_aws_ssh_key_name}"
-     iam_instance_profile        = "${aws_iam_instance.mgmt_profile.name}"
+     iam_instance_profile        = "${aws_iam_instance_profile.mgmt_profile.name}"
      associate_public_ip_address = true
      tags {
           App           = "${var.option_3_aws_vpc_name}"
