@@ -58,7 +58,7 @@ def getVSSOutput():
 def runVSSCli():
 
     try:
-        os.system('vss result object --cloud-account-id 859985958216 > vss_result_object.txt')
+        os.system('vss result object > vss_result_object.txt')
         logging.info("Ran vss cli command")
     except Exception as e:
         print('Exception is %s',e)
