@@ -536,3 +536,13 @@ output "web2_public_ip" {
  value = "${aws_instance.web2.public_ip}"
 
 }
+
+output "igw_id" {
+  
+ value = "${aws_internet_gateway.igw.id}" 
+
+}
+
+output "ssh_key_name" {
+  value = "${var.option_5_aws_ssh_key_name}"
+}
