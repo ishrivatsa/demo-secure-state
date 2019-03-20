@@ -546,6 +546,3 @@ output "igw_id" {
 output "ssh_key_name" {
   value = "${var.option_5_aws_ssh_key_name}"
 }
-
-
-
