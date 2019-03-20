@@ -86,7 +86,7 @@ def findAndCompare():
 if __name__ == '__main__':
 
 # turn on the runVSSCli line to run the Cli command first
-    runVSSCli()
+#    runVSSCli()
     logging.info("entering main")
     found=findAndCompare()
     print("Result of the search is", found)
