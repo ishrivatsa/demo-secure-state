@@ -21,7 +21,7 @@ option_4_aws_vpc_cidr = "10.0.0.0/16"
 
 # Add SSH key name here
 option_5_aws_ssh_key_name = "adminKey"
-option_6_aws_ssh_key_name = "devKey"
+#option_6_aws_ssh_key_name = "devKey"
 
 # Deploy MySql EC2 instance.
 option_9_use_rds_database = 0
