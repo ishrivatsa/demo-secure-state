@@ -270,11 +270,6 @@ resource "aws_security_group" "db_sg" {
 }
 
 
-resource "aws_iam_instance_profile" "mgmt_profile" {
-  name  = "mgmt_profile"
-  roles = ["EC2Admin"]
-}
-
 resource "aws_db_instance" "fitcycle_rds_db" {
   count                  = "${var.option_9_use_rds_database}"
   identifier             = "${var.option_10_aws_rds_identifier}"
