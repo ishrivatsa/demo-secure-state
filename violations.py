@@ -75,7 +75,7 @@ def findAndCompare():
     totalViolations=vssOutput['totalItems']
 
     for item in vssOutput['violations']:
-	print(item['id'])
+	#print(item['id'])
         if item['id']==igw_id['value'] and item['rule_report']['display_name']=="Publicly routable instance shares ssh-key with administrative instances": #replace vpc with the igw_id and the display name
             logging.info("violation found, %s", item)
             found=True
@@ -89,4 +89,5 @@ if __name__ == '__main__':
 #    runVSSCli()
     logging.info("entering main")
     found=findAndCompare()
-    print("Result of the search is", found)
+  #  print("Result of the search is", found)
+    print(found)
