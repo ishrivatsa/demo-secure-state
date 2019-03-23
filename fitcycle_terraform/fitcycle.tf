@@ -451,6 +451,7 @@ resource "aws_instance" "api1" {
      subnet_id              = "${aws_subnet.public_subnet.id}"
      vpc_security_group_ids = ["${aws_security_group.api_sg.id}"]
      key_name               = "${var.option_6_aws_ssh_key_name}"
+     iam_instance_profile   = "EC2Admin"
      tags {
           App           = "${var.option_3_aws_vpc_name}"
           Name          = "api1-${var.option_3_aws_vpc_name}"
@@ -473,6 +474,7 @@ resource "aws_instance" "api2" {
      subnet_id              = "${aws_subnet.public_subnet.id}"
      vpc_security_group_ids = ["${aws_security_group.api_sg.id}"]
      key_name               = "${var.option_6_aws_ssh_key_name}"
+     iam_instance_profile   = "EC2Admin"
      tags {
           App           = "${var.option_3_aws_vpc_name}"
           Name          = "api2-${var.option_3_aws_vpc_name}"
@@ -493,7 +495,6 @@ resource "aws_instance" "mgmt" {
      subnet_id                   = "${aws_subnet.public_subnet.id}"
      vpc_security_group_ids      = ["${aws_security_group.mgmt_sg.id}"]
      key_name                    = "${var.option_5_aws_ssh_key_name}"
-     iam_instance_profile        = "EC2Admin"
      associate_public_ip_address = true
      tags {
           App           = "${var.option_3_aws_vpc_name}"
