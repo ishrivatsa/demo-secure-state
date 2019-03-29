@@ -3,7 +3,7 @@
 provider "aws" {
   #access_key = "${var.option_1_aws_access_key}"
   #secret_key = "${var.option_2_aws_secret_key}"
-  #region     = "${var.region}"
+  region     = "${var.region}"
 }
 
 # This allows terraform to backup the *.tfstate file to AWS s3 bucket. Uncomment or Remove the lines to disable remote backup and use local state (Not Recommended)
