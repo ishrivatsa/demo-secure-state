@@ -11,7 +11,7 @@ option_4_aws_vpc_cidr = "10.0.0.0/16"
 
 # Add SSH key name here
 option_5_aws_ssh_key_name = "adminKey"
-option_6_aws_ssh_key_name = "devKey"
+option_6_aws_ssh_key_name = "adminKey"
 
 # Deploy RDS instance.
 # Modify option_9 value to 1, to deploy multi-az RDS
