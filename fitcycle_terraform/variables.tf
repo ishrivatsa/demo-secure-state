@@ -9,12 +9,12 @@ variable "region" {
 variable "images" {
   type = "map"
   default = {
-    web="ami-0424ce05e6eac4d44"
-    mgmt="ami-09b7afbfbed29099c"
-    dblb="ami-0c287d8bb736b0dc4"
-    db="ami-03442710b971503b5"
-    app="ami-0c5a97dcec802ce81"
-    api="ami-04aba6a14439a24d2"
+    web="ami-061392db613a6357b"
+    mgmt="ami-01e24be29428c15b2"
+    dblb="ami-061392db613a6357b"
+    db="ami-01e24be29428c15b2"
+    app="ami-061392db613a6357b"
+    api="ami-01e24be29428c15b2"
    }
 }
 
