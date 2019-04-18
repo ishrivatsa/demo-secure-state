@@ -17,7 +17,7 @@ option_6_aws_ssh_key_name = "adminKey"
 # Modify option_9 value to 1, to deploy multi-az RDS
 # Note : Multi AZ RDS will take atleast 15 min to deploy
 option_9_use_rds_database = 1
-option_10_aws_rds_identifier = "fitcycleRds"
+option_10_aws_rds_identifier = "fitcyclerds"
 option_11_multi_az_rds = 0
 
 product = "fitcycle"
