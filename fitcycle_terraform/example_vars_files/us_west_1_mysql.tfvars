@@ -7,12 +7,12 @@
 region = "us-west-1"
 
 images = {
-    web="ami-029218bb923933d1a"
-    mgmt="ami-048ef73aadc6c3bf6"
-    dblb="ami-06eb4b1fd6d3fa7f7"
-    db="ami-001af27175ceb5c1d"
-    app="ami-0cbde20c9254f27cf"
-    api="ami-013c6f058d5323ba3"
+    web="ami-06397100adf427136"
+    mgmt="ami-06397100adf427136"
+    dblb="ami-069339bea0125f50d"
+    db="ami-069339bea0125f50d"
+    app="ami-06397100adf427136"
+    api="ami-06397100adf427136"
 }
 
 option_3_aws_vpc_name = "fitcycleDemo"
