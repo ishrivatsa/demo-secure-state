@@ -14,12 +14,12 @@ variable "region" {
 variable "images" {
   type = map(string)
   default = {
-    web  = "ami-0424ce05e6eac4d44"
-    mgmt = "ami-09b7afbfbed29099c"
-    dblb = "ami-0c287d8bb736b0dc4"
-    db   = "ami-03442710b971503b5"
-    app  = "ami-0c5a97dcec802ce81"
-    api  = "ami-04aba6a14439a24d2"
+    web  = "ami-07d0cf3af28718ef8"
+    mgmt = "ami-0cfee17793b08a293"
+    dblb = "ami-07d0cf3af28718ef8"
+    db   = "ami-0cfee17793b08a293"
+    app  = "ami-07d0cf3af28718ef8"
+    api  = "ami-0cfee17793b08a293"
   }
 }
 
