@@ -8,4 +8,7 @@ Terraform version 0.12.5 and above
 NOT COMPATIBLE With Terrraform versions less than 0.12
 
 ## CHANGE LOG
+
+Repo version - v0.3
+
 Upgrade to Terraform version 0.12.5
