@@ -425,7 +425,6 @@ resource "aws_instance" "web2" {
 }
 
 resource "aws_instance" "api1" {
-<<<<<<< HEAD
   ami                    = var.images["api"]
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public_subnet.id
@@ -462,8 +461,7 @@ resource "aws_instance" "api2" {
     Environment   = var.environment
     Organization  = var.organization
     CostCenter    = var.costcenter
-  }
-=======
+   }
      ami                    = "${var.images["api"]}"
      instance_type          = "t2.micro"
      subnet_id              = "${aws_subnet.public_subnet.id}"
@@ -504,7 +502,6 @@ resource "aws_instance" "api2" {
           Organization  = "${var.organization}"
           "Cost Center" = "${var.costcenter}"
      }
->>>>>>> a21e253e26b4007c1e0e785bb70d6e2bdd7f2b95
 }
 
 resource "aws_instance" "mgmt" {
@@ -547,8 +544,6 @@ output "web2_public_ip" {
   value = aws_instance.web2.public_ip
 }
 
-<<<<<<< HEAD
-=======
 output "igw_id" {
   
  value = "${aws_internet_gateway.igw.id}" 
@@ -558,4 +553,3 @@ output "igw_id" {
 output "ssh_key_name" {
   value = "${var.option_5_aws_ssh_key_name}"
 }
->>>>>>> a21e253e26b4007c1e0e785bb70d6e2bdd7f2b95
