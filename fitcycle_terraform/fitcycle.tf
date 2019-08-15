@@ -15,7 +15,7 @@ resource "aws_vpc" "vcs_vpc" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_subnet" "public_subnet" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter  = var.costcenter
   }
 }
 
@@ -45,7 +45,7 @@ resource "aws_subnet" "rds_subnet_1" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -61,7 +61,7 @@ resource "aws_subnet" "rds_subnet_2" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -77,7 +77,7 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter = var.costcenter
   }
 }
 
@@ -90,7 +90,7 @@ resource "aws_internet_gateway" "igw" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -282,7 +282,7 @@ resource "aws_db_instance" "fitcycle_rds_db" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter  = var.costcenter
   }
 }
 
@@ -302,7 +302,7 @@ resource "aws_instance" "db1" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -322,7 +322,7 @@ resource "aws_instance" "db2" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter  = var.costcenter
   }
 }
 
@@ -342,7 +342,7 @@ resource "aws_instance" "dblb" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -361,7 +361,7 @@ resource "aws_instance" "app1" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter  = var.costcenter
   }
 }
 
@@ -380,7 +380,7 @@ resource "aws_instance" "app2" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -400,7 +400,7 @@ resource "aws_instance" "web1" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter  = var.costcenter
   }
 }
 
@@ -420,7 +420,7 @@ resource "aws_instance" "web2" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -430,7 +430,7 @@ resource "aws_instance" "api1" {
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.api_sg.id]
   key_name               = var.option_6_aws_ssh_key_name
-  iam_instance_profile   = "EC2Admin"
+#  iam_instance_profile   = "EC2Admin"
   tags = {
     App           = var.option_3_aws_vpc_name
     Name          = "api1-${var.option_3_aws_vpc_name}"
@@ -440,7 +440,7 @@ resource "aws_instance" "api1" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -450,7 +450,7 @@ resource "aws_instance" "api2" {
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.api_sg.id]
   key_name               = var.option_6_aws_ssh_key_name
-  iam_instance_profile   = "EC2Admin"
+ # iam_instance_profile   = "EC2Admin"
   tags = {
     App           = var.option_3_aws_vpc_name
     Name          = "api2-${var.option_3_aws_vpc_name}"
@@ -460,7 +460,7 @@ resource "aws_instance" "api2" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
@@ -480,7 +480,7 @@ resource "aws_instance" "mgmt" {
     Owner         = var.owner
     Environment   = var.environment
     Organization  = var.organization
-    "Cost Center" = var.costcenter
+    CostCenter    = var.costcenter
   }
 }
 
