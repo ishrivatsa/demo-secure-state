@@ -11,13 +11,13 @@ option_4_aws_vpc_cidr = "10.0.0.0/16"
 
 # Add SSH key name here
 option_5_aws_ssh_key_name = "adminKey"
-option_6_aws_ssh_key_name = "devKey"
+option_6_aws_ssh_key_name = "adminKey"
 
 # Deploy RDS instance.
 # Modify option_9 value to 1, to deploy multi-az RDS
 # Note : Multi AZ RDS will take atleast 15 min to deploy
 option_9_use_rds_database = 1
-option_10_aws_rds_identifier = "fitcycleRds"
+option_10_aws_rds_identifier = "fitcyclerds"
 option_11_multi_az_rds = 0
 
 product = "fitcycle"

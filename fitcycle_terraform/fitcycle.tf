@@ -425,6 +425,7 @@ resource "aws_instance" "web2" {
 }
 
 resource "aws_instance" "api1" {
+<<<<<<< HEAD
   ami                    = var.images["api"]
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.public_subnet.id
@@ -462,6 +463,48 @@ resource "aws_instance" "api2" {
     Organization  = var.organization
     CostCenter    = var.costcenter
   }
+=======
+     ami                    = "${var.images["api"]}"
+     instance_type          = "t2.micro"
+     subnet_id              = "${aws_subnet.public_subnet.id}"
+     vpc_security_group_ids = ["${aws_security_group.api_sg.id}"]
+     key_name               = "${var.option_6_aws_ssh_key_name}"
+     iam_instance_profile   = "EC2Admin"
+     tags {
+          App           = "${var.option_3_aws_vpc_name}"
+          Name          = "api1-${var.option_3_aws_vpc_name}"
+          Tier          = "API"
+          Product       = "${var.product}"
+          Team          = "${var.team}"
+          Owner         = "${var.owner}"
+          Environment   = "${var.environment}"
+          Organization  = "${var.organization}"
+          "Cost Center" = "${var.costcenter}"
+
+
+
+     }
+}
+
+resource "aws_instance" "api2" {
+     ami                    = "${var.images["api"]}"
+     instance_type          = "t2.micro"
+     subnet_id              = "${aws_subnet.public_subnet.id}"
+     vpc_security_group_ids = ["${aws_security_group.api_sg.id}"]
+     key_name               = "${var.option_6_aws_ssh_key_name}"
+     iam_instance_profile   = "EC2Admin"
+     tags {
+          App           = "${var.option_3_aws_vpc_name}"
+          Name          = "api2-${var.option_3_aws_vpc_name}"
+          Tier          = "API"
+          Product       = "${var.product}"
+          Team          = "${var.team}"
+          Owner         = "${var.owner}"
+          Environment   = "${var.environment}"
+          Organization  = "${var.organization}"
+          "Cost Center" = "${var.costcenter}"
+     }
+>>>>>>> a21e253e26b4007c1e0e785bb70d6e2bdd7f2b95
 }
 
 resource "aws_instance" "mgmt" {
@@ -504,3 +547,15 @@ output "web2_public_ip" {
   value = aws_instance.web2.public_ip
 }
 
+<<<<<<< HEAD
+=======
+output "igw_id" {
+  
+ value = "${aws_internet_gateway.igw.id}" 
+
+}
+
+output "ssh_key_name" {
+  value = "${var.option_5_aws_ssh_key_name}"
+}
+>>>>>>> a21e253e26b4007c1e0e785bb70d6e2bdd7f2b95

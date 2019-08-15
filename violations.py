@@ -90,4 +90,8 @@ if __name__ == '__main__':
     logging.info("entering main")
     found=findAndCompare()
   #  print("Result of the search is", found)
+<<<<<<< HEAD
     print(found)
+=======
+    print(found)
+>>>>>>> a21e253e26b4007c1e0e785bb70d6e2bdd7f2b95
