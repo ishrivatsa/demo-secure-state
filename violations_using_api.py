@@ -29,7 +29,7 @@ def all_findings():
         'Content-Type' : 'application/json', 
         'Authorization': 'Bearer {}'.format(access_token)
     }
-    payload = "{\n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"eyJiYXRjaE51bWJlciI6MCwiY29udGludWF0aW9uSWQiOiI1Y2E2NDNiNTE0ODY5ZDAwMTE1Nzc1NmZfNWM4YzI1ZjM3YTU1MGUxZmI2NTYwYmNhX2l3enFqdGQwZnFrdmxfY25leWI0cjNhcDBhbGMxem8ybDNpNGQ2c3NrYWk9IyJ9\",\n\t\t\"pageSize\": 1000\n\t}\n}"
+    payload = "{\n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"\",\n\t\t\"pageSize\": 1000\n\t}\n}"
     ##payload = "{\n}"
     url = 'https://api.securestate.vmware.com/v1/findings/query'
     response = requests.post(url , data=payload, headers=headers)
