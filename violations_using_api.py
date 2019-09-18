@@ -55,7 +55,7 @@ def all_findings():
     }
 
 # replace cloud provider key with "AWS" for Amazon web services related violations
-    payload = "{\n\t\"filters\": {}\n, \n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"" +  continuationToken + "\",\n\t\t\"pageSize\":1000\n\t}\n}"
+    payload = "{\n\t\"filters\": {\n\t\t\"cloudProvider\": \"azure\"\n\t}\n, \n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"" +  continuationToken + "\",\n\t\t\"pageSize\":1000\n\t}\n}"
 
     url = 'https://api.securestate.vmware.com/v1/findings/query'
     allFindings = requests.post(url , data=payload, headers=headers)
