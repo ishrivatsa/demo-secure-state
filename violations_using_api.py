@@ -83,7 +83,7 @@ def get_violation_by_object(all_findings, objectID):
     data = json.loads(all_findings.content)
     
     print (objectID)
-    ##print (data)
+    print (data)
 ## replace ruleId = "5c8c26847a550e1fb6560cab" for Azure and ruleId = "5c8c26417a550e1fb6560c3f" for AWS for port 22 open
 ## Tim using ruleId = "5c8c267b7a550e1fb6560c9a" for Virtual Machine Disks not Encrypted in Azure 
     for violation in data["results"]:
