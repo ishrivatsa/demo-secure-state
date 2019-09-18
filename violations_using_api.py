@@ -55,7 +55,7 @@ def all_findings():
     }
 
 # replace cloud provider key with "AWS" for Amazon web services related violations
-    payload = "{\n\t\"filters\": {}\n, \n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"" +  continuationToken + "\",\n\t\t\"pageSize\":1000\n\t}\n}"
+    payload = "{\n\t\"filters\": {\n\t\t\"cloudProvider\": \"AWS\"\n\t}\n, \n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"" +  continuationToken + "\",\n\t\t\"pageSize\":1000\n\t}\n}"
 
     url = 'https://api.securestate.vmware.com/v1/findings/query'
     allFindings = requests.post(url , data=payload, headers=headers)
@@ -81,16 +81,18 @@ def get_violation_by_object(all_findings, objectID):
     violations = []
     
     data = json.loads(all_findings.content)
-
-    #print (data)
+    
+    print (objectID)
+    ##print (data)
 ## replace ruleId = "5c8c26847a550e1fb6560cab" for Azure and ruleId = "5c8c26417a550e1fb6560c3f" for AWS for port 22 open
 ## Tim using ruleId = "5c8c267b7a550e1fb6560c9a" for Virtual Machine Disks not Encrypted in Azure 
     for violation in data["results"]:
-        if (violation["objectId"] == objectID and violation["level"] == "High" and violation["ruleId"] == "5c8c26417a550e1fb6560c3f"):
+        if (violation["objectId"] == objectID and violation["ruleId"] == "5c8c25ec7a550e1fb6560bbe"):
         #if (violation["objectId"] == objectID):
             violations.append(violation)
 
     if(len(violations) > 0):
+	print ("Violation Found !!")
         return True
     else:
         return False
@@ -103,15 +105,14 @@ if __name__ == '__main__':
     ## Get all Findings
     resp = all_findings()
 
-    ## Get violations based on object IDs
-    objects = ["aks-agentpool-18677188-0", "aks-agentpool-18677188-2"]
-
     violation_found = []
-    terraformOutput=getTerraformFile()
+    terraformOutput=get_terraform_file()
+    objectId = terraformOutput['sg_id']
     
-    for objectId in objects:
-        has_violation = get_violation_by_object(resp, objectId)
-        violation_found.append(has_violation)
+    print (objectId)
+    
+    has_violation = get_violation_by_object(resp, objectId['value'])
+    violation_found.append(has_violation)
  
     print("Checking if violations exist \n")
     print(violation_found)
