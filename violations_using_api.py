@@ -107,11 +107,12 @@ if __name__ == '__main__':
     objects = ["aks-agentpool-18677188-0", "aks-agentpool-18677188-2"]
 
     violation_found = []
-    terraformOutput=getTerraformFile()
+    terraformOutput=get_terraform_file()
+    objectId = terraformOutput['sg_id']
     
-    for objectId in objects:
-        has_violation = get_violation_by_object(resp, objectId)
-        violation_found.append(has_violation)
+    
+    has_violation = get_violation_by_object(resp, objectId['value'])
+    violation_found.append(has_violation)
  
     print("Checking if violations exist \n")
     print(violation_found)
