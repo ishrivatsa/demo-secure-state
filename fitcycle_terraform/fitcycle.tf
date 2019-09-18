@@ -493,7 +493,7 @@ output "rds_arn" {
 }
 
 output "sg_id" {
-  vaule = aws_security_group.mgmt_sg.id
+  value = aws_security_group.mgmt_sg.id
 }
 
 output "mgmt_public_ip" {
