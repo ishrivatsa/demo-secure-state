@@ -92,7 +92,7 @@ def get_violation_by_object(all_findings, objectID):
             violations.append(violation)
 
     if(len(violations) > 0):
-	print ("Violation Found !!")
+	##print ("Violation Found !!")
         return True
     else:
         return False
