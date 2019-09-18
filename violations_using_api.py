@@ -82,15 +82,16 @@ def get_violation_by_object(all_findings, objectID):
     
     data = json.loads(all_findings.content)
 
-    print (data)
+    #print (data)
 ## replace ruleId = "5c8c26847a550e1fb6560cab" for Azure and ruleId = "5c8c26417a550e1fb6560c3f" for AWS for port 22 open
 ## Tim using ruleId = "5c8c267b7a550e1fb6560c9a" for Virtual Machine Disks not Encrypted in Azure 
     for violation in data["results"]:
-        if (violation["objectId"] == objectID and violation["level"] == "High" and violation["ruleId"] == "5c8c26417a550e1fb6560c3f"):
+        if (violation["objectId"] == objectID and violation["level"] == "High" and violation["ruleId"] == "5c8c25ec7a550e1fb6560bb"):
         #if (violation["objectId"] == objectID):
             violations.append(violation)
 
     if(len(violations) > 0):
+	print ("Violation Found !!")
         return True
     else:
         return False
