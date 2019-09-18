@@ -492,6 +492,10 @@ output "rds_arn" {
   value = aws_db_instance.fitcycle_rds_db.*.arn
 }
 
+output "sg_id" {
+  vaule = aws_security_group.mgmt_sg.id
+}
+
 output "mgmt_public_ip" {
   value = aws_instance.mgmt.public_ip
 }
