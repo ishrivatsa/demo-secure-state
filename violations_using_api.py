@@ -87,7 +87,7 @@ def get_violation_by_object(all_findings, objectID):
 ## replace ruleId = "5c8c26847a550e1fb6560cab" for Azure and ruleId = "5c8c26417a550e1fb6560c3f" for AWS for port 22 open
 ## Tim using ruleId = "5c8c267b7a550e1fb6560c9a" for Virtual Machine Disks not Encrypted in Azure 
     for violation in data["results"]:
-        if (violation["objectId"] == objectID and violation["level"] == "High" and violation["ruleId"] == "5c8c25ec7a550e1fb6560bb"):
+        if (violation["objectId"] == objectID and violation["ruleId"] == "5c8c25ec7a550e1fb6560bbe"):
         #if (violation["objectId"] == objectID):
             violations.append(violation)
 
@@ -104,9 +104,6 @@ if __name__ == '__main__':
     auth()
     ## Get all Findings
     resp = all_findings()
-
-    ## Get violations based on object IDs
-    ##objects = ["aks-agentpool-18677188-0", "aks-agentpool-18677188-2"]
 
     violation_found = []
     terraformOutput=get_terraform_file()
