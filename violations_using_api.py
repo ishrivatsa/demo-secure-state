@@ -55,7 +55,7 @@ def all_findings():
     }
 
 # replace cloud provider key with "AWS" for Amazon web services related violations
-    payload = "{\n\t\"filters\": {\n\t\t\"cloudProvider\": \"azure\"\n\t}\n, \n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"" +  continuationToken + "\",\n\t\t\"pageSize\":1000\n\t}\n}"
+    payload = "{\n\t\"filters\": {\n\t\t\"cloudProvider\": \"AWS\"\n\t}\n, \n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"" +  continuationToken + "\",\n\t\t\"pageSize\":1000\n\t}\n}"
 
     url = 'https://api.securestate.vmware.com/v1/findings/query'
     allFindings = requests.post(url , data=payload, headers=headers)
@@ -83,7 +83,7 @@ def get_violation_by_object(all_findings, objectID):
     data = json.loads(all_findings.content)
     
     print (objectID)
-    #print (data)
+    print (data)
 ## replace ruleId = "5c8c26847a550e1fb6560cab" for Azure and ruleId = "5c8c26417a550e1fb6560c3f" for AWS for port 22 open
 ## Tim using ruleId = "5c8c267b7a550e1fb6560c9a" for Virtual Machine Disks not Encrypted in Azure 
     for violation in data["results"]:
