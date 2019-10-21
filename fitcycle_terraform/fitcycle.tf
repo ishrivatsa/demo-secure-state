@@ -1,5 +1,5 @@
 # This terraform template will deploy fitcycle in HA configuration
-# It will provision the following resource
+# It will provision the following resources
 
 data "aws_availability_zones" "available" {
 }
