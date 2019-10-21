@@ -464,26 +464,6 @@ resource "aws_instance" "api2" {
    }
 }
 
-resource "aws_instance" "api2" {
-     ami                    = "${var.images["api"]}"
-     instance_type          = "t2.micro"
-     subnet_id              = "${aws_subnet.public_subnet.id}"
-     vpc_security_group_ids = ["${aws_security_group.api_sg.id}"]
-     key_name               = "${var.option_6_aws_ssh_key_name}"
-     iam_instance_profile   = "EC2Admin"
-     tags {
-    App           = var.option_3_aws_vpc_name
-    Name          = "api2-${var.option_3_aws_vpc_name}"
-    Tier          = "API"
-    Product       = var.product
-    Team          = var.team
-    Owner         = var.owner
-    Environment   = var.environment
-    Organization  = var.organization
-    CostCenter    = var.costcenter
-     }
-}
-
 resource "aws_instance" "mgmt" {
   ami                         = var.images["mgmt"]
   instance_type               = "t2.medium"
