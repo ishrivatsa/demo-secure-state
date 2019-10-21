@@ -31,7 +31,7 @@ def all_findings():
     }
     payload = "{\n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"\",\n\t\t\"pageSize\": 1000\n\t}\n}"
     ##payload = "{\n}"
-    url = 'https://api.securestate.vmware.com/v1/findings/query'
+    url = 'https://api.securestate.vmware.com/v2/findings/query'
     response = requests.post(url , data=payload, headers=headers)
 
     return response
