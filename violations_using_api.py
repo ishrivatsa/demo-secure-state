@@ -41,8 +41,10 @@ def all_findings():
         'Authorization': 'Bearer {}'.format(access_token)
     }
     payload = "{\n}"
-    url = 'https://api.securestate.vmware.com/v1/findings/query'
+    url = 'https://api.securestate.vmware.com/v2/findings/query'
     response = requests.post(url , data=payload, headers=headers)
+
+    print (response.content)
 
     # Fetch the continuation Token
     data = json.loads(response.content)
