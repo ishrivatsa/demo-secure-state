@@ -40,8 +40,7 @@ def all_findings():
         'Content-Type' : 'application/json', 
         'Authorization': 'Bearer {}'.format(access_token)
     }
-    payload = "{\n\t\"paginationInfo\":{\n\t\t\"continuationToken\": \"\",\n\t\t\"pageSize\": 1000\n\t}\n}"
-   ## payload = "{\n}"
+    payload = "{\n}"
     url = 'https://api.securestate.vmware.com/v1/findings/query'
     response = requests.post(url , data=payload, headers=headers)
 
